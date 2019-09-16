@@ -1,0 +1,29 @@
+@font-face{
+	font-family: 'thư pháp';
+	src : url(VNI_thuphap.ttf);
+}
+p{
+
+	color : red;
+	background-color: rgba(162,106,99,0.5);
+	font-size: 4em;
+	font-weight: bold;
+	text-decoration: underline;
+	letter-spacing: 10px;
+	text-transform: capitalize;
+	word-spacing: 20px;
+	text-align: left;
+	text-indent: 40px;
+	text-shadow: 1px 1px 1px black;
+}
+img{
+	vertical-align: middle;
+	width: 1000px;
+}
+body{
+	background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(33,121,9,1) 35%, rgba(0,212,255,1) 100%);
+}
+div{
+	text-align: center;
+}
