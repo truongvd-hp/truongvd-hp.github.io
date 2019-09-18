@@ -1,8 +1,4 @@
-@font-face{
-	font-family: 'thư pháp';
-	src : url(VNI_thuphap.ttf);
-}
-p{
+/*p{
 
 	color : red;
 	background-color: rgba(162,106,99,0.5);
@@ -15,14 +11,28 @@ p{
 	text-align: left;
 	text-indent: 40px;
 	text-shadow: 1px 1px 1px black;
-}
+}*/
 img{
 	vertical-align: middle;
-	width: 300px;
+	width: 500px;
+}
+.red{
+	background-color: #F3DF58
+}
+.bold{
+	background-color: #AE2727
+}
+.small{
+	vertical-align: middle;
+	width:300px;
 }
 body{
-	background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(33,121,9,1) 35%, rgba(0,212,255,1) 100%);
+	background-image: url(https://png.pngtree.com/thumb_back/fh260/back_pic/05/15/83/5959af942011957.jpg) ;
+	background-size: cover;
+	font-size: 20px;
+	color: #188A25;
+	font-family: Times,Georgia;
+
 }
 div{
 	text-align: center;
