@@ -1,0 +1,46 @@
+img{
+	width: 40%;
+}
+div{
+	display: inline-block;
+	width: 32%;
+	height: 320px;
+	padding: 10px;
+	box-sizing: border-box;
+	border: 1px inset green;
+	float:left;
+	box-sizing: cover;
+	margin :10px;
+	border-radius: 10px;
+	background: white;
+}
+/*.so2{
+	position: absolute;
+	bottom: 100px;
+}*/
+.gia{
+	font-size: 30px;
+	color:#22A625;
+}
+body{
+	background: rgb(214,204,174);
+background: linear-gradient(90deg, rgba(214,204,174,1) 4%, rgba(43,212,46,1) 20%, rgba(40,208,190,0.6218196751356793) 37%, rgba(108,119,200,1) 61%, rgba(171,199,107,1) 76%, rgba(28,112,180,1) 91%);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#banner{
+	font-size: 50px;
+	color:#FA4570;
+	text-align: center;
+}
+h1{
+	font-size: 45px;
+	letter-spacing: 3px;
+	color:red;
+}
+a{
+	font-size: 23px;
+}
+span{
+	color:red;
+}
