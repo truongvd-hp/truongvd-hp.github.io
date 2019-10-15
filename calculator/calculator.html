@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trường đẹp trai</title>
+	<style>
+		button{
+			width: 198px;
+			height: 100px;
+			border: 1px solid black;
+			text-align: center;
+			float: left;
+			margin: 0 0 0 0;
+			align-self: center;
+		}
+		.container{
+			display: flex;
+			flex-wrap: wrap;
+			box-sizing: border-box;
+			width: 800px;
+		}
+		input{
+			width: 592px;
+			height: 96px;
+			border: 1px solid black;
+			margin: 0 0 0 0;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="container" width = "800px">
+		<input type="text" id="result">
+		<button onclick="AC(this)" >AC</button>
+		<button onclick="press(this)" value= "(">(</button>
+		<button onclick="press(this)" value =")">)</button>
+		<button onclick="canbac2(this)" >can2</button>
+		<button onclick="del(this)">xóa số</button>
+		<button onclick="press(this)" value ="7">7</button>
+		<button onclick="press(this)" value ="8">8</button>
+		<button onclick="press(this)" value = "9">9</button>
+		<button onclick="press(this)"  value ="+">+</button>		
+		<button onclick="press(this)" value ="4">4</button>
+		<button onclick="press(this)" value="5">5</button>
+		<button onclick="press(this)" value="6">6</button>
+		<button onclick="press(this)" value ="-">-</button>
+		<button onclick="press(this)" value="1">1</button>
+		<button onclick="press(this)" value="2">2</button>
+		<button onclick="press(this)" value="3">3</button>
+		<button onclick="press(this)" value ="*">*</button>
+		<button onclick="press(this)" value="0">0</button>
+		<button onclick="press(this)" value =".">.</button>
+		<button onclick="ketqua(this)">=</button>
+		<button onclick="press(this)" value ="/">/</button>
+		<button onclick="binhphuong(this)" >^2</button>
+		<button onclick="giaithua(this)" >!</button>
+	</div>
+	<script>
+		var x = document.getElementById("result");
+		function press(button){
+			x.value += button.value;
+		}
+		function AC(button){
+			x.value = '';
+		}
+		function del(button){
+			x.value = x.value.substring(0, x.value.length -1)
+		}
+		function ketqua(button){
+			x.value = eval(x.value)
+		}
+		function canbac2(){
+			x.value = Math.sqrt(x.value)
+		}
+		function binhphuong(button){
+			x.value = Math.pow(x.value,2)		
+		}
+		function giaithua(button){
+			if (x.value != Math.floor(x.value) || x.value<0) {x.value ="Không thể tính bình phương của số này";}
+			else x.value = tinhgiatrigiaithua(x.value);
+		}
+		function tinhgiatrigiaithua(x){
+			if (x==1) return 1;
+			else return x*tinhgiatrigiaithua(x-1)
+		}
+	</script>
+</body>
+</html>
