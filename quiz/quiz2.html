@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz</title>
+	<style>
+		button{
+			width: 300px;
+			height: 100px;			
+			margin:  20px 500px 20px 500px; 
+		}
+		body{
+			background: url('http://thuthuatphanmem.vn/uploads/2018/05/18/hinh-nen-may-tinh-hd-la-phong-xanh-dep_024422517.jpg')
+		}
+	</style>
+	<link href="quiz3.html">
+</head>
+<body>
+	<script src="jquery-3.4.1.min.js"></script>
+	<div>
+		<div id ="container">
+			<div><button class="ques"  ></button></div>
+			<div><button class="answerA" onclick="nextPage(this)"  value ="1"></button></div>
+			<div><button class="answerB" onclick="nextPage(this)" value ="0"></button></div>
+			<div><button class="answerC" onclick="nextPage(this)" value ="0"></button></div>
+			
+		</div>
+	</div>
+	<script>
+		var questions=[{question:"where is VietNam",answer1:"A.South East of Asian" ,answer2:"B.africa",answer3:"C.Europe"},{question:"What is the capital of VietNam ?",answer1:"A.HaNoi",answer2:"B.Bangkok",answer3:"C.Tokyo"},{question:"how many countries are there in ASEAN ?",answer1:"A.10",answer2:"B.11",answer3:"C.13"},{question:"what is the newest Iphone model ?",answer1:"A.Iphone 13",answer2:"B.Iphone 12",answer3:"C.Iphone 11"},{question:"when does spring begin ?",answer1:"A.January",answer2:"B.April",answer3:"C.September"}]
+		$(".ques").text(`${questions[1].question}`)
+		$("button:eq(1)").text(`${questions[1].answer1}`)
+		$("button:eq(2)").text(`${questions[1].answer2}`)
+		$("button:eq(3)").text(`${questions[1].answer3}`)
+		
+		function nextPage(button){
+			if(button.value==1)
+			{window.location.assign('quiz3.html')};
+		}
+	</script>	
+</body>
+</html>
