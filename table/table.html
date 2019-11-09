@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table</title>
+	<style>					
+		td{
+			width: 400px;
+			border-collapse: collapse;
+			text-align: center;
+			border-spacing: 1px;
+		}
+		.row1{
+			color:white;
+			background: #1FCCE0;
+			text-align: center;
+		}
+		i{
+			float: right;
+			padding-right: 5px;
+		}
+		.Gray{
+			background-color: #A6A3A3
+		}
+		.genre{
+				border-top-left-radius: 10px
+		}
+		.date{
+				border-top-right-radius: 10px
+		}
+	</style>
+	<script src="https://kit.fontawesome.com/67db14d5f0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<input id="searchBox" type="text" style="width:100px" placeholder="Search"></input>
+    
+	<table id="myTable">
+		<tr class="row1" id="tr1">
+			<td class="genre">GENRE<i class="fas fa-sort" onclick="active()"></i></td>
+			<td>TITLE<i class="fas fa-sort" onclick="active1()"></i></td>
+			<td>DURATION<i class="fas fa-sort" onclick="active2()"></i></td>
+			<td class="date">DATE<i class="fas fa-sort" onclick="active3()"></i></td>
+		</tr>
+	</table>
+
+	<script src="jquery-3.4.1.min.js"></script>
+	<script>
+		var table=$("#myTable");
+		let films = [
+		{genre: "Animation", title: "Wildfood", duration: "3:47", date: "2014-07-16"},
+		{genre: "Film", title: "The Deer", duration: "6:24", date: "2014-02-28"},
+		{genre: "Animation", title: "The Ghost", duration: "11:40", date: "2012-04-10"},
+		{genre: "Film", title: "Animals", duration: "6:40", date: "2005-12-21"},
+		{genre: "Animation", title: "Wagons", duration: "21:40", date: "2007-04-12"},
+	];
+		function addToTable(){
+		films.forEach(function(film) {
+    		$("tbody").append(`
+    		<tr>
+        <td>${film['genre']}</td>
+        <td>${film['title']}</td>
+        <td>${film['duration']}</td>
+        <td>${film['date']}</td>
+    	</tr>`)
+		});}		
+		addToTable();
+		function active(){
+		function sapxep(a,b){
+			let comparison = 0;
+ 			if (a.genre > b.genre) {
+   				comparison = 1;
+ 			} else if (a.genre < b.genre) {
+   			comparison = -1;
+ 			}
+ 			return comparison;
+		};
+		films.sort(sapxep);
+		$("tr:gt(0)",table).hide();
+		addToTable();
+		}
+		function active1(){
+		function sapxep(a,b){
+			let comparison = 0;
+ 			if (a.title > b.title) {
+   				comparison = 1;
+ 			} else if (a.title < b.title) {
+   			comparison = -1;
+ 			}
+ 			return comparison;
+		};
+		films.sort(sapxep);
+		$("tr:gt(0)",table).hide();
+		addToTable();
+		}
+		function active2(){
+		function sapxep(a,b){
+			let comparison = 0;
+ 			if (a.duration > b.duration) {
+   				comparison = 1;
+ 			} else if (a.duration < b.duration) {
+   			comparison = -1;
+ 			}
+ 			return comparison;
+		};
+		films.sort(sapxep);
+		$("tr:gt(0)",table).hide();
+		addToTable();
+		}
+		function active3(){
+		function sapxep(a,b){
+			let comparison = 0;
+ 			if (a.date > b.date) {
+   				comparison = 1;
+ 			} else if (a.date < b.date) {
+   			comparison = -1;
+ 			}
+ 			return comparison;
+		};
+		films.sort(sapxep);
+		$("tr:gt(0)",table).hide();
+		addToTable();
+		}
+		$("tr:even:gt(0)",table).addClass('Gray');
+		$("#searchBox").keyup(function(){
+    		$("tr:gt(0)",table).hide();
+    		$("tr:gt(0):contains('"+this.value+"')",table).show();
+		});
+	</script>
+</body>
+</html>
